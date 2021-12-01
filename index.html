@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div>
+            ProGrad News App
+        </div>
+        <div class="top" onclick="topNews()">
+            Top
+        </div>
+
+            <select name="dropdown" id="dd1" onclick="category()">
+                <option value="">Category</option>
+                <option value="in">IN:India</option>
+                <option value="us">US:United States</option>
+            </select>
+
+    </div>
+    <div id="content">
+
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
