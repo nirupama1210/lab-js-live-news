@@ -17,7 +17,7 @@ async function category() {
     {
     try{
        
-    let apiurl="http://newsapi.org/v2/top-headlines?country="+country+"&apiKey="+apikey;
+    let apiurl="https://newsapi.org/v2/top-headlines?country="+country+"&apiKey="+apikey;
     let api=await fetch(apiurl)
     const data = await api.json()
     console.log(data.articles);
