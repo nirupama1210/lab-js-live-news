@@ -35,10 +35,50 @@ body{
     outline: none;
     font-family: 'Open Sans', sans-serif;
 }
-.content{
+#content{
     display: grid;
     grid-template-columns: auto auto auto;
-    grid-gap:20px;
+    grid-gap:10px;
     background-color: white;
-    padding: 20px;
+    padding: 10px;
 }
+.newsContent{
+    background-color: white;
+    border:none;
+    text-align:start;
+    padding: 10px;
+}
+img{
+    height: 275px;
+    width: 100%;
+}
+.card-title{
+    text-align: center;
+    color: black;
+   }
+ 
+   .card-des{
+     text-align: center;
+     color: gray;
+   }
+ 
+ 
+   .btn{
+     margin-top: 20px;
+     margin-bottom: 20px;
+     padding: 5px;
+     border-radius: 2px;
+     background-color: rgb(0, 110, 255);
+     color: white;
+     width: 100px;
+   }
+   .btn a{
+     text-decoration: none;
+     color: white;
+     border: none;
+     }
+ 
+   .btn:hover{
+     border: 1px solid black;
+     transition: .5s;
+   }

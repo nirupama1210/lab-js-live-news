@@ -10,76 +10,95 @@ async function getData(api)
         console.log(err);
     }
 }
-
 async function category() {
-    let country=document.getElementById("dd1").value
+    let country=document.getElementById("dd1").value;
     if(country!=="")
     {
-    try{
-       
-    let apiurl="https://newsapi.org/v2/top-headlines?country="+country+"&apiKey="+apikey;
-    let api=await fetch(apiurl)
-    const data = await api.json()
-    console.log(data.articles);
-    // let latestNews = data.articles;
-    // //   console.log(latestNews);
-    //    var newsContent = '';
+    let apiurl="http://newsapi.org/v2/top-headlines?country="+country+"&apiKey="+apikey;
+    axios.get(apiurl)
+    .then(res=>{
+        console.log(res)
+        let latestNews = res.data.articles;
+      console.log(latestNews);
+       var newsContent = '';
      
-    //    for (var i in latestNews) {
-    //    newsContent +=
+       for (var i in latestNews) {
+       newsContent +=
   
-    //    `<div class="newsContent">
-    // <div class="card-image">
-    // <img  src="${latestNews[i].urlToImage}">
-    // </div>
-    // <div class="card-title">
-    // <h6>${latestNews[i].title}</h6>
-    // </div>
-    // <div class="card-des">
-    // <p>${latestNews[i].description}</p>
-    // </div>
-    // <div class="btn">
-    // <a href="${latestNews[i].url}">READ MORE</a>
-    // </div>
-    // </div>`; }
-    // document.getElementById('content').innerHTML = newsContent; 
-    }
-    catch(err)
-    {
-        console.log(err.message)
-    }
+       `<div class="newsContent">
+    <div class="card-image">
+    <img  src="${latestNews[i].urlToImage}">
+    </div>
+    <div class="card-title">
+    <h6>${latestNews[i].title}</h6>
+    </div>
+    <div class="card-des">
+    <p>${latestNews[i].description}</p>
+    </div>
+    <div class="btn">
+    <a href="${latestNews[i].url}">READ MORE</a>
+    </div>
+    </div>`; }
+    document.getElementById('content').innerHTML = newsContent; 
+    })
+    .catch(err=>{
+        console.log(err)
+    })
 }
+
+    // try{
+       
+    // 
+    // let api=await fetch(apiurl)
+    // const data = await api.json()
+    // console.log(data.articles);
+
+    // }
+    // catch(err)
+    // {
+    //     console.log(err.message)
+    // }
    }
+//category("in")
+//category("us")
+// async function category() {
+//     let country=document.getElementById("dd1").value
+//     if(country!=="")
+//     {
+//     try{
+       
+//     let apiurl="https://newsapi.org/v2/top-headlines?country="+country+"&apiKey="+apikey;
+//     let api=await fetch(apiurl)
+//     const data = await api.json()
+//     console.log(data.articles);
+//     // let latestNews = data.articles;
+//     // //   console.log(latestNews);
+//     //    var newsContent = '';
+     
+//     //    for (var i in latestNews) {
+//     //    newsContent +=
+  
+//     //    `<div class="newsContent">
+//     // <div class="card-image">
+//     // <img  src="${latestNews[i].urlToImage}">
+//     // </div>
+//     // <div class="card-title">
+//     // <h6>${latestNews[i].title}</h6>
+//     // </div>
+//     // <div class="card-des">
+//     // <p>${latestNews[i].description}</p>
+//     // </div>
+//     // <div class="btn">
+//     // <a href="${latestNews[i].url}">READ MORE</a>
+//     // </div>
+//     // </div>`; }
+//     // document.getElementById('content').innerHTML = newsContent; 
+//     }
+//     catch(err)
+//     {
+//         console.log(err.message)
+//     }
+// }
+//    }
 
    
-/*
-
-            //console.log(api);
-    //const data=await getData(api);
-    //console.log(data);
-          let latestNews = res.articles;
-           //   console.log(latestNews);
-              var newsContent = '';
-            
-              for (var i in latestNews) {
-              newsContent +=
-         
-              `<div class="newsContent">
-           <div class="card-image">
-           <img  src="${latestNews[i].urlToImage}">
-           </div>
-           <div class="card-title">
-           <h6>${latestNews[i].title}</h6>
-           </div>
-           <div class="card-des">
-           <p>${latestNews[i].description}</p>
-           </div>
-           <div class="btn">
-           <a href="${latestNews[i].url}">READ MORE</a>
-           </div>
-           </div>`; }
-        //   document.getElementById('content').innerHTML = newsContent; 
-         
-              }
-             
- }*/
