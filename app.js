@@ -14,7 +14,7 @@ async function category() {
     let country=document.getElementById("dd1").value;
     if(country!=="")
     {
-    let apiurl="http://newsapi.org/v2/top-headlines?country="+country+"&apiKey="+apikey;
+    let apiurl="https://newsapi.org/v2/top-headlines?country="+country+"&apiKey="+apikey;
     axios.get(apiurl)
     .then(res=>{
         console.log(res)
